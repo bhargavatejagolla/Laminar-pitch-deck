@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Map, Activity, ArrowRight, Play, Camera } from "lucide-react";
+import { Search, Map, Activity, ArrowRight, Play, Camera, ArrowDown } from "lucide-react";
 
 export function WowLayer() {
   return (
