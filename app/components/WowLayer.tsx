@@ -40,7 +40,7 @@ export function WowLayer() {
             initial={{ opacity: 0, scale: 0.95 }} 
             whileInView={{ opacity: 1, scale: 1 }} 
             viewport={{ once: true }}
-            className="bg-panel border border-line p-8 rounded-sm relative overflow-hidden"
+            className="glass-panel shining-border p-8 rounded-xl relative overflow-hidden"
           >
             {/* Visual Timeline Compression */}
             <div className="mb-8">
@@ -99,7 +99,7 @@ export function WowLayer() {
             initial={{ opacity: 0, scale: 0.95 }} 
             whileInView={{ opacity: 1, scale: 1 }} 
             viewport={{ once: true }}
-            className="bg-panel border border-line p-8 rounded-sm lg:order-1 order-2 h-[400px] relative flex flex-col justify-center items-center overflow-hidden"
+            className="glass-panel shining-border p-8 rounded-xl lg:order-1 order-2 h-[400px] relative flex flex-col justify-center items-center overflow-hidden"
           >
             {/* Minimalist 3D Space concept using 2D transforms */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(32,38,46,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(32,38,46,0.3)_1px,transparent_1px)] bg-[size:20px_20px] [transform:rotateX(60deg)] origin-center" />

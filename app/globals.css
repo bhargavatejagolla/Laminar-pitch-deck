@@ -25,3 +25,44 @@
     @apply bg-void text-text font-sans antialiased;
   }
 }
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface/30 backdrop-blur-xl border border-line/40 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+
+  .shining-border {
+    position: relative;
+  }
+  
+  .shining-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: conic-gradient(from var(--border-angle), transparent 25%, var(--color-signal), transparent 75%);
+    animation: border-spin 4s linear infinite;
+  }
+  
+  .shining-border::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    z-index: -1;
+    background: inherit;
+    border-radius: inherit;
+  }
+
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+
+  @keyframes border-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+}

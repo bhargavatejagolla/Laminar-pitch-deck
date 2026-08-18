@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Activity } from "lucide-react";
 import { useEffect, useState } from "react";
 import WebThreads from "./WebThreads";
+import StrokeText from "./StrokeText";
 
 const pipelineStages = [
   "OBSERVE",
@@ -76,14 +77,33 @@ export function Hero() {
             THE CITY ALREADY HAS THE CAMERAS.
           </motion.h1>
           
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-text mb-8 drop-shadow-[0_0_15px_rgba(0,240,255,0.1)]"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 2.8 }}
+            className="mb-8"
           >
-            LAMINAR GIVES THEM INTELLIGENCE.
-          </motion.h1>
+            <StrokeText
+              text="LAMINAR GIVES THEM INTELLIGENCE."
+              strokeColor="#00F0FF"
+              fillColor="#F8FAFC"
+              strokeWidth={1.5}
+              drawDuration={2}
+              fillDelay={0.5}
+              stagger={0.08}
+              ease="power2.out"
+              trigger="mount"
+              fillMode="wipe"
+              fontSize={64}
+              fontWeight={800}
+              letterSpacing={-2}
+              className="drop-shadow-[0_0_15px_rgba(0,240,255,0.3)] hidden md:block"
+            />
+            {/* Fallback for mobile since the stroke text might be too big */}
+            <h1 className="text-4xl font-medium tracking-tight text-text drop-shadow-[0_0_15px_rgba(0,240,255,0.1)] md:hidden">
+              LAMINAR GIVES THEM INTELLIGENCE.
+            </h1>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}

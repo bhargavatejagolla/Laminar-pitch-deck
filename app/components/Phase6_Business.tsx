@@ -153,7 +153,7 @@ export function Phase6_Business() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-void border-2 border-signal p-8 md:p-12 rounded-sm shadow-[0_0_40px_rgba(0,240,255,0.05)] relative overflow-hidden"
+              className="glass-panel shining-border p-8 md:p-12 rounded-xl shadow-[0_0_40px_rgba(0,240,255,0.05)] relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-signal/50">LAMINAR USP</div>
               <div className="font-mono text-xs text-signal font-bold tracking-widest mb-8">THE LAMINAR WAY</div>
