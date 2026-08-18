@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck, Play, ArrowRight, Activity, Terminal, BrainCircuit, Cpu } from "lucide-react";
+import SplitFlapText from "./SplitFlapText";
 
 export function Phase7_Conclusion() {
   return (
@@ -145,6 +146,23 @@ export function Phase7_Conclusion() {
           className="relative z-10"
         >
           <Cpu className="w-16 h-16 text-signal mx-auto mb-12 opacity-80" />
+          
+          <SplitFlapText
+            words={["LAUNCH READY", "SYNC ONLINE", "SIGNAL LIVE"]}
+            flipDuration={0.12}
+            stagger={0.06}
+            cycleDelay={2400}
+            charset="alphanumeric"
+            flipsPerChar={8}
+            tileColor="#111827"
+            textColor="#00F0FF"
+            tileRadius={8}
+            gap={6}
+            fontSize={52}
+            loop
+            padTo={12}
+            className="mb-12"
+          />
           
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-8">
             The infrastructure is already built.

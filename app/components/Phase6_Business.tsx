@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe2, Crosshair, Target, Cpu, Cloud, Zap, ArrowRight, Server, Layers } from "lucide-react";
+import { Globe2, Crosshair, Target, Cpu, Cloud, Zap, ArrowRight, Server, Layers, Camera } from "lucide-react";
 
 export function Phase6_Business() {
   return (
