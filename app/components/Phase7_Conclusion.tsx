@@ -6,15 +6,13 @@ import SplitFlapText from "./SplitFlapText";
 
 export function Phase7_Conclusion() {
   return (
-    <section className="relative w-full bg-void text-text overflow-hidden py-32 border-t border-line/50" id="readiness">
+    <section className="relative w-full bg-void text-text overflow-hidden py-16 border-t border-line/50" id="readiness">
       
       {/* 1. Technical Assets & Innovation */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center mb-12"
         >
           <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">LAMINAR / TECHNICAL ASSETS</div>
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-8">
@@ -27,11 +25,12 @@ export function Phase7_Conclusion() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-panel border border-line p-8 rounded-sm group hover:border-signal/50 transition-colors"
+            className="bg-panel border border-line p-8 md:p-10 rounded-xl group hover:border-signal/50 hover:bg-signal/5 transition-colors relative overflow-hidden"
           >
-            <BrainCircuit className="w-8 h-8 text-signal mb-6 group-hover:animate-pulse" />
-            <h4 className="font-mono text-sm tracking-widest font-bold mb-4">PROPRIETARY AI MODELS</h4>
-            <p className="text-muted text-xs leading-relaxed font-sans">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-signal/10 rounded-bl-full translate-x-12 -translate-y-12 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-500" />
+            <BrainCircuit className="w-10 h-10 md:w-12 md:h-12 text-signal mb-8 group-hover:animate-pulse drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]" />
+            <h4 className="font-mono text-base md:text-lg tracking-widest font-bold mb-4">PROPRIETARY AI MODELS</h4>
+            <p className="text-muted text-sm md:text-base leading-relaxed font-sans">
               Custom-trained computer vision and behavioral analysis pipelines optimized for urban surveillance edge-cases.
             </p>
           </motion.div>
@@ -41,11 +40,12 @@ export function Phase7_Conclusion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-panel border border-line p-8 rounded-sm group hover:border-signal/50 transition-colors"
+            className="bg-panel border border-line p-8 md:p-10 rounded-xl group hover:border-signal/50 hover:bg-signal/5 transition-colors relative overflow-hidden"
           >
-            <Activity className="w-8 h-8 text-signal mb-6 group-hover:animate-pulse" />
-            <h4 className="font-mono text-sm tracking-widest font-bold mb-4">NOVEL ALGORITHMS</h4>
-            <p className="text-muted text-xs leading-relaxed font-sans">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-signal/10 rounded-bl-full translate-x-12 -translate-y-12 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-500" />
+            <Activity className="w-10 h-10 md:w-12 md:h-12 text-signal mb-8 group-hover:animate-pulse drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]" />
+            <h4 className="font-mono text-base md:text-lg tracking-widest font-bold mb-4">NOVEL ALGORITHMS</h4>
+            <p className="text-muted text-sm md:text-base leading-relaxed font-sans">
               Advanced multi-camera fusion and 4D spatial reconstruction allowing contextual intelligence across separate feeds.
             </p>
           </motion.div>
@@ -55,11 +55,12 @@ export function Phase7_Conclusion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-panel border border-line p-8 rounded-sm group hover:border-signal/50 transition-colors"
+            className="bg-panel border border-line p-8 md:p-10 rounded-xl group hover:border-signal/50 hover:bg-signal/5 transition-colors relative overflow-hidden"
           >
-            <Terminal className="w-8 h-8 text-signal mb-6 group-hover:animate-pulse" />
-            <h4 className="font-mono text-sm tracking-widest font-bold mb-4">PROPRIETARY DATASETS</h4>
-            <p className="text-muted text-xs leading-relaxed font-sans">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-signal/10 rounded-bl-full translate-x-12 -translate-y-12 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-500" />
+            <Terminal className="w-10 h-10 md:w-12 md:h-12 text-signal mb-8 group-hover:animate-pulse drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]" />
+            <h4 className="font-mono text-base md:text-lg tracking-widest font-bold mb-4">PROPRIETARY DATASETS</h4>
+            <p className="text-muted text-sm md:text-base leading-relaxed font-sans">
               Curated synthetic and real-world urban datasets ensuring high accuracy in diverse environmental conditions.
             </p>
           </motion.div>
@@ -67,7 +68,7 @@ export function Phase7_Conclusion() {
       </div>
 
       {/* 2. TRL Level */}
-      <div className="bg-panel/20 border-y border-line/30 py-32 mb-40">
+      <div className="bg-panel/20 border-y border-line/30 py-16 mb-20">
         <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
           <motion.h3 
             initial={{ opacity: 0 }}
@@ -78,28 +79,26 @@ export function Phase7_Conclusion() {
             Current Technology Readiness Level
           </motion.h3>
 
-          <div className="relative max-w-4xl mx-auto flex items-center justify-between font-mono text-[10px] md:text-xs">
+          <div className="relative max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between font-mono text-xs gap-12 md:gap-0 mt-24">
             {/* Background Line */}
-            <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-line" />
+            <div className="absolute left-[50%] md:left-0 top-0 bottom-0 md:top-1/2 md:bottom-auto w-px md:w-full md:h-px bg-line -translate-x-1/2 md:-translate-x-0 md:-translate-y-1/2" />
             
             {/* Progress Line */}
             <motion.div 
-              initial={{ width: 0 }}
-              whileInView={{ width: "66.66%" }}
+              initial={{ height: 0, width: 0 }}
+              whileInView={{ height: "66.66%", width: "100%" }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-px bg-signal shadow-[0_0_10px_rgba(0,240,255,0.8)]"
+              className="absolute left-[50%] md:left-0 top-0 md:top-1/2 w-[2px] md:w-full h-0 md:h-[2px] bg-signal shadow-[0_0_10px_rgba(0,240,255,0.8)] -translate-x-1/2 md:-translate-x-0 md:-translate-y-1/2 origin-top md:origin-left md:[!height:2px] max-md:[!width:2px]"
             />
 
-            <div className="relative z-10 flex flex-col items-center gap-4 text-muted/50">
-              <div className="w-3 h-3 rounded-full bg-panel border-2 border-line" />
-              <span className="hidden md:block">TRL 1-3</span>
-              <span className="md:hidden">1-3</span>
+            <div className="relative z-10 flex flex-col md:flex-col items-center gap-4 text-muted/50 bg-panel px-4 py-2 md:p-0 md:bg-transparent rounded-sm">
+              <div className="w-3 h-3 rounded-full bg-void border-2 border-line hidden md:block" />
+              <span>TRL 1-3</span>
             </div>
-            <div className="relative z-10 flex flex-col items-center gap-4 text-muted/50">
-              <div className="w-3 h-3 rounded-full bg-panel border-2 border-line" />
-              <span className="hidden md:block">TRL 4-5</span>
-              <span className="md:hidden">4-5</span>
+            <div className="relative z-10 flex flex-col md:flex-col items-center gap-4 text-muted/50 bg-panel px-4 py-2 md:p-0 md:bg-transparent rounded-sm">
+              <div className="w-3 h-3 rounded-full bg-void border-2 border-line hidden md:block" />
+              <span>TRL 4-5</span>
             </div>
             
             {/* Active TRL 6 */}
@@ -108,35 +107,33 @@ export function Phase7_Conclusion() {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 1.5 }}
-              className="relative z-20 flex flex-col items-center gap-4 text-signal font-bold tracking-widest"
+              className="relative z-20 flex flex-col md:flex-col items-center gap-4 text-signal font-bold tracking-widest bg-void p-6 md:p-0 rounded-xl md:rounded-none border border-signal/30 md:border-none shadow-[0_0_30px_rgba(0,240,255,0.1)] md:shadow-none"
             >
-              <div className="w-6 h-6 rounded-full bg-void border-2 border-signal shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center justify-center">
-                <div className="w-2 h-2 bg-signal rounded-full animate-ping" />
+              <div className="w-8 h-8 md:w-6 md:h-6 rounded-full bg-void border-2 border-signal shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center justify-center">
+                <div className="w-3 h-3 md:w-2 md:h-2 bg-signal rounded-full animate-ping" />
               </div>
-              <div className="absolute top-10 flex flex-col items-center w-48 text-center">
-                <span className="text-sm">TRL 6</span>
-                <span className="text-text mt-1 text-xs">Prototype Demonstration</span>
+              <div className="md:absolute md:top-10 flex flex-col items-center w-full md:w-48 text-center">
+                <span className="text-lg md:text-sm">TRL 6</span>
+                <span className="text-text mt-2 md:mt-1 text-sm md:text-xs">Functional Prototype</span>
               </div>
             </motion.div>
 
-            <div className="relative z-10 flex flex-col items-center gap-4 text-muted/30">
-              <div className="w-3 h-3 rounded-full bg-panel border-2 border-line/30" />
-              <span className="hidden md:block">TRL 7-8</span>
-              <span className="md:hidden">7-8</span>
+            <div className="relative z-10 flex flex-col md:flex-col items-center gap-4 text-muted/30 bg-panel px-4 py-2 md:p-0 md:bg-transparent rounded-sm">
+              <div className="w-3 h-3 rounded-full bg-void border-2 border-line/30 hidden md:block" />
+              <span>TRL 7-8</span>
             </div>
-            <div className="relative z-10 flex flex-col items-center gap-4 text-muted/30">
-              <div className="w-3 h-3 rounded-full bg-panel border-2 border-line/30" />
-              <span className="hidden md:block">TRL 9</span>
-              <span className="md:hidden">9</span>
+            <div className="relative z-10 flex flex-col md:flex-col items-center gap-4 text-muted/30 bg-panel px-4 py-2 md:p-0 md:bg-transparent rounded-sm">
+              <div className="w-3 h-3 rounded-full bg-void border-2 border-line/30 hidden md:block" />
+              <span>TRL 9</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* 3. The Ask / Prototype CTA */}
-      <div className="py-40 flex flex-col items-center text-center container mx-auto px-6 relative">
+      <div className="py-20 flex flex-col items-center text-center container mx-auto px-6 relative">
         {/* Glow behind CTA */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-signal/5 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[1000px] bg-signal/10 blur-[150px] rounded-full pointer-events-none" />
         
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -145,7 +142,7 @@ export function Phase7_Conclusion() {
           transition={{ duration: 1 }}
           className="relative z-10"
         >
-          <Cpu className="w-16 h-16 text-signal mx-auto mb-12 opacity-80" />
+          <Cpu className="w-20 h-20 md:w-32 md:h-32 text-signal mx-auto mb-16 opacity-80 drop-shadow-[0_0_20px_rgba(0,240,255,0.3)]" />
           
           <SplitFlapText
             words={["LAUNCH READY", "SYNC ONLINE", "SIGNAL LIVE"]}

@@ -5,14 +5,14 @@ import { Search, Map, Activity, ArrowRight, Play, Camera, ArrowDown } from "luci
 
 export function WowLayer() {
   return (
-    <section className="relative w-full bg-void text-text overflow-hidden py-32 border-t border-line/30" id="prototype">
+    <section className="relative w-full bg-void text-text overflow-hidden py-16 border-t border-line/30" id="prototype">
       
       {/* 1. Transition */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 text-center mb-40">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 text-center mb-20">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true,  }}
           className="text-4xl md:text-6xl font-medium tracking-tight mb-8"
         >
           But what happens inside the layer?
@@ -20,7 +20,7 @@ export function WowLayer() {
       </div>
 
       {/* 01 - AI VIDEO SEARCH */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40" id="video-search">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20" id="video-search">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">01 / AI VIDEO SEARCH</div>
@@ -93,7 +93,7 @@ export function WowLayer() {
       </div>
 
       {/* 02 - 4D SPATIAL INTELLIGENCE */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40" id="spatial-4d">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20" id="spatial-4d">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }} 
@@ -165,7 +165,7 @@ export function WowLayer() {
       </div>
 
       {/* 03 - EMERGENCY ORCHESTRATION */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40" id="emergency">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20" id="emergency">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">03 / EMERGENCY ORCHESTRATION</div>
@@ -224,7 +224,7 @@ export function WowLayer() {
       </div>
 
       {/* 4. THE THREE CAPABILITIES CONNECT */}
-      <div className="py-32 bg-panel/30 border-y border-line/30 mb-40">
+      <div className="py-16 bg-panel/30 border-y border-line/30 mb-20">
         <div className="container mx-auto px-6 max-w-4xl flex flex-col items-center text-center">
           <div className="font-mono text-sm tracking-widest text-muted flex flex-col items-center gap-4">
             <div className="bg-void border border-line px-8 py-3 rounded-sm">AI VIDEO SEARCH</div>
@@ -256,7 +256,7 @@ export function WowLayer() {
       </div>
 
       {/* 5. USE REAL PRODUCT EVIDENCE */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -303,7 +303,7 @@ export function WowLayer() {
       </div>
 
       {/* 6. BEFORE / AFTER Moment */}
-      <div className="py-32 bg-panel/30 border-y border-line/30 mb-40">
+      <div className="py-16 bg-panel/30 border-y border-line/30 mb-20">
         <div className="container mx-auto px-6 max-w-6xl text-center">
           <div className="grid md:grid-cols-2 gap-16 md:gap-8 items-center">
             
@@ -353,7 +353,7 @@ export function WowLayer() {
       </div>
 
       {/* 7. TECHNICAL STACK REVEAL */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40 text-center">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -387,7 +387,7 @@ export function WowLayer() {
       </div>
 
       {/* 8. Final Transition */}
-      <div className="py-40 flex flex-col items-center text-center">
+      <div className="py-20 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -397,11 +397,11 @@ export function WowLayer() {
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-8">
             LAMINAR doesn't just detect what a camera sees.
           </h2>
-          <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-24 text-signal drop-shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+          <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-12 text-signal drop-shadow-[0_0_15px_rgba(0,240,255,0.2)]">
             It builds intelligence around what is happening.
           </h2>
           
-          <div className="flex flex-col items-center gap-3 font-mono text-[10px] tracking-widest text-muted mb-40">
+          <div className="flex flex-col items-center gap-3 font-mono text-[10px] tracking-widest text-muted mb-20">
             <div>VIDEO</div><ArrowDown className="w-3 h-3 text-signal" />
             <div>CONTEXT</div><ArrowDown className="w-3 h-3 text-signal" />
             <div>SPATIAL</div><ArrowDown className="w-3 h-3 text-signal" />

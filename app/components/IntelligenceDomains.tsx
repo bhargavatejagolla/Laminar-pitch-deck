@@ -19,14 +19,14 @@ export function IntelligenceDomains() {
   const [activeDomain, setActiveDomain] = useState<string | null>(null);
 
   return (
-    <section className="relative w-full bg-void text-text overflow-hidden py-32 border-t border-line/30">
+    <section className="relative w-full bg-void text-text overflow-hidden py-16 border-t border-line/30">
       
       {/* 1. Opening */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 text-center mb-32">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true,  }}
           className="font-mono text-xs text-signal tracking-[0.2em] mb-8"
         >
           LAMINAR / INTELLIGENCE DOMAINS
@@ -61,139 +61,134 @@ export function IntelligenceDomains() {
         </motion.p>
       </div>
 
-      {/* 2. Interactive City Map / Domain Constellation */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40">
-        <div className="relative max-w-5xl mx-auto h-[600px] flex items-center justify-center">
-          {/* Central Node */}
-          <div className="absolute z-20 flex flex-col items-center justify-center w-32 h-32 rounded-full bg-void border border-signal/50 shadow-[0_0_30px_rgba(0,240,255,0.1)]">
-            <div className="font-mono text-sm tracking-widest text-signal font-bold">LAMINAR</div>
-            <div className="w-1.5 h-1.5 bg-signal rounded-full mt-2 animate-pulse" />
+      {/* 2. Responsive Domain Grid */}
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20">
+        
+        {/* Core Node */}
+        <div className="flex justify-center mb-16">
+          <motion.div 
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center justify-center w-40 h-40 rounded-full bg-void border-2 border-signal shadow-[0_0_40px_rgba(0,240,255,0.2)] relative"
+          >
+            <div className="absolute inset-0 bg-signal/5 blur-xl rounded-full animate-pulse" />
+            <div className="font-mono text-lg tracking-[0.3em] text-signal font-bold relative z-10">LAMINAR</div>
+            <div className="font-sans text-[10px] text-muted/70 tracking-widest mt-1 relative z-10">INTELLIGENCE CORE</div>
+          </motion.div>
+        </div>
+
+        {/* Domain Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Subtle connection lines behind grid on desktop */}
+          <div className="absolute inset-0 hidden lg:block pointer-events-none">
+            <div className="absolute top-1/2 left-0 right-0 h-px bg-line/50 -translate-y-1/2" />
+            <div className="absolute left-1/4 right-1/4 top-0 bottom-0 flex justify-between">
+               <div className="w-px h-full bg-line/50" />
+               <div className="w-px h-full bg-line/50" />
+            </div>
           </div>
 
-          {/* Radial Lines & Domains */}
-          {domains.map((domain, i) => {
-            const angle = (i * (360 / domains.length)) * (Math.PI / 180);
-            const radiusDesktop = 220;
-            const radiusMobile = 140;
-            
-            // Positioning for desktop vs mobile will rely on CSS and JS approximations,
-            // but we'll use a responsive grid fallback below for mobile.
-            const x = Math.cos(angle) * radiusDesktop;
-            const y = Math.sin(angle) * radiusDesktop;
-
-            return (
-              <motion.div
-                key={domain.id}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: i * 0.1 }}
-                className="absolute hidden md:flex flex-col items-center justify-center z-30"
-                style={{ 
-                  transform: `translate(${x}px, ${y}px)`,
-                }}
-                onMouseEnter={() => setActiveDomain(domain.id)}
-                onMouseLeave={() => setActiveDomain(null)}
-              >
-                {/* Connecting Line (SVG would be better, but simulated via CSS for simplicity, or just implied by distance) */}
+          {domains.map((domain, i) => (
+            <motion.div
+              key={domain.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true,  }}
+              transition={{ duration: 0.6, delay: i * 0.1, type: "spring", stiffness: 100 }}
+              onMouseEnter={() => setActiveDomain(domain.id)}
+              onMouseLeave={() => setActiveDomain(null)}
+              className="group relative bg-panel/30 border border-line p-6 rounded-xl hover:bg-panel transition-colors"
+              style={{ 
+                borderColor: activeDomain === domain.id ? domain.color : 'var(--color-line)',
+                boxShadow: activeDomain === domain.id ? `0 0 30px ${domain.color}20` : 'none'
+              }}
+            >
+              <div className="flex items-start gap-4 mb-4">
                 <div 
-                  className={`flex items-center justify-center w-14 h-14 rounded-full border bg-void transition-all duration-300 cursor-pointer ${
-                    activeDomain === domain.id ? 'scale-110 shadow-lg' : 'opacity-70 hover:opacity-100'
-                  }`}
+                  className="flex items-center justify-center w-12 h-12 rounded-lg border bg-void transition-all duration-300"
                   style={{ 
-                    borderColor: activeDomain === domain.id ? domain.color : 'var(--color-line)',
-                    boxShadow: activeDomain === domain.id ? `0 0 20px ${domain.color}40` : 'none'
+                    borderColor: activeDomain === domain.id ? domain.color : 'var(--color-line/50)',
+                    color: activeDomain === domain.id ? domain.color : 'var(--color-muted)'
                   }}
                 >
-                  <domain.icon className="w-5 h-5" style={{ color: activeDomain === domain.id ? domain.color : 'var(--color-muted)' }} />
-                </div>
-                <div className={`mt-3 font-mono text-[10px] tracking-widest text-center transition-colors ${activeDomain === domain.id ? 'text-text font-bold' : 'text-muted'}`}>
-                  {domain.title}
-                </div>
-
-                {/* Hover Details */}
-                <div className={`absolute top-full mt-4 w-48 p-4 bg-panel border border-line rounded-sm shadow-xl pointer-events-none transition-all duration-300 ${
-                  activeDomain === domain.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                }`}>
-                  <div className="font-mono text-[10px] font-bold mb-2" style={{ color: domain.color }}>{domain.desc}</div>
-                  <div className="text-xs text-muted/80 font-sans">{domain.detail}</div>
-                </div>
-              </motion.div>
-            );
-          })}
-
-          {/* Mobile Domain List (Fallback for radial) */}
-          <div className="md:hidden flex flex-col gap-4 w-full relative z-10 mt-32">
-            {domains.map((domain) => (
-              <div key={domain.id} className="bg-panel border border-line p-4 rounded-sm flex items-start gap-4">
-                <div className="p-2 rounded-full border border-line/50" style={{ color: domain.color }}>
-                  <domain.icon className="w-4 h-4" />
+                  <domain.icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="font-mono text-xs tracking-widest text-text mb-1">{domain.title}</div>
-                  <div className="text-xs text-muted/80 font-sans mb-1">{domain.desc}</div>
-                  <div className="text-[10px] font-mono text-muted/50">{domain.detail}</div>
+                  <div className="font-mono text-xs tracking-widest font-bold mb-1 transition-colors" style={{ color: activeDomain === domain.id ? domain.color : 'var(--color-text)' }}>
+                    {domain.title}
+                  </div>
+                  <div className="text-xs font-sans text-muted leading-tight">
+                    {domain.desc}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+              
+              <div className={`text-sm font-light font-sans text-muted/90 transition-all duration-300 ${activeDomain === domain.id ? 'opacity-100' : 'opacity-70'}`}>
+                {domain.detail}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
       {/* 3. The Architecture Convergence */}
-      <div className="py-32 bg-panel/30 border-y border-line/30">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
+      <div className="py-16 bg-panel/30 border-y border-line/30 relative overflow-hidden">
+        {/* Subtle radial glow behind the tree */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-signal/5 blur-[100px] rounded-full pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-24"
+            className="mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-4 text-muted">
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-4 text-muted">
               Different problems.
             </h2>
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-signal drop-shadow-[0_0_15px_rgba(0,240,255,0.15)]">
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-signal drop-shadow-[0_0_15px_rgba(0,240,255,0.2)]">
               One intelligence layer.
             </h2>
           </motion.div>
 
-          <div className="flex flex-col items-center justify-center font-mono text-xs text-muted">
-            <div className="bg-void border border-signal px-6 py-2 rounded-sm text-signal mb-8">LAMINAR</div>
-            <div className="w-px h-8 bg-line" />
+          <div className="flex flex-col items-center justify-center font-mono text-sm md:text-base text-muted">
+            <div className="bg-void border border-signal px-8 py-3 rounded-md text-signal font-bold tracking-widest mb-8 shadow-[0_0_20px_rgba(0,240,255,0.15)] text-lg">LAMINAR CORE</div>
+            <div className="w-px h-12 bg-line" />
             
-            <div className="w-full max-w-md border-t border-line relative pt-8 flex justify-between px-8">
-              <div className="absolute top-0 left-1/2 w-px h-8 bg-line -translate-x-1/2" />
+            <div className="w-full max-w-2xl border-t border-line relative pt-8 flex justify-between px-8 md:px-16">
+              <div className="absolute top-0 left-1/2 w-px h-12 bg-line -translate-x-1/2" />
               <div className="flex flex-col items-center">
-                <ArrowDown className="w-3 h-3 text-line mb-2" />
-                <div className="bg-panel border border-line px-4 py-2 rounded-sm">VISION</div>
+                <ArrowDown className="w-4 h-4 text-line mb-3" />
+                <div className="bg-panel border border-line px-6 py-3 rounded-md shadow-lg font-bold">VISION</div>
               </div>
               <div className="flex flex-col items-center">
-                <ArrowDown className="w-3 h-3 text-line mb-2" />
-                <div className="bg-panel border border-line px-4 py-2 rounded-sm">SPATIAL</div>
+                <ArrowDown className="w-4 h-4 text-line mb-3" />
+                <div className="bg-panel border border-line px-6 py-3 rounded-md shadow-lg font-bold">SPATIAL</div>
               </div>
               <div className="flex flex-col items-center">
-                <ArrowDown className="w-3 h-3 text-line mb-2" />
-                <div className="bg-panel border border-line px-4 py-2 rounded-sm">TEMPORAL</div>
+                <ArrowDown className="w-4 h-4 text-line mb-3" />
+                <div className="bg-panel border border-line px-6 py-3 rounded-md shadow-lg font-bold">TEMPORAL</div>
               </div>
             </div>
 
-            <div className="w-px h-8 bg-line mt-8" />
-            <div className="bg-void border-2 border-line px-6 py-2 rounded-sm text-text">CONTEXT</div>
-            <div className="w-px h-8 bg-line" />
-            <div className="bg-void border-2 border-line px-6 py-2 rounded-sm text-text">INTELLIGENCE</div>
-            <div className="w-px h-8 bg-line" />
-            <div className="bg-panel border-2 border-signal/50 px-6 py-2 rounded-sm text-signal">OPERATIONS</div>
+            <div className="w-px h-12 bg-line mt-8" />
+            <div className="bg-void border-2 border-line px-8 py-3 rounded-md text-text font-bold shadow-lg">CONTEXT</div>
+            <div className="w-px h-12 bg-line" />
+            <div className="bg-void border-2 border-line px-8 py-3 rounded-md text-text font-bold shadow-lg">INTELLIGENCE</div>
+            <div className="w-px h-12 bg-line" />
+            <div className="bg-panel border-2 border-signal/50 px-10 py-4 rounded-md text-signal font-bold tracking-widest shadow-[0_0_20px_rgba(0,240,255,0.1)] text-lg">OPERATIONS</div>
           </div>
         </div>
       </div>
 
       {/* 4. Modular Deployment & Scalability */}
-      <div className="py-32 container mx-auto px-6 max-w-5xl">
+      <div className="py-16 container mx-auto px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">
             Start with one problem. Expand through the same infrastructure.
@@ -241,7 +236,7 @@ export function IntelligenceDomains() {
             One camera can become multiple intelligence sources.
           </motion.h2>
 
-          <div className="flex flex-col items-center font-mono text-xs text-muted mb-32">
+          <div className="flex flex-col items-center font-mono text-xs text-muted mb-16">
             <div className="bg-panel border border-line px-6 py-2 rounded-sm text-text mb-8">CAMERA 047</div>
             <div className="w-px h-8 bg-line" />
             <div className="w-full max-w-sm border-t border-line relative pt-8 flex justify-between px-8">
@@ -278,7 +273,7 @@ export function IntelligenceDomains() {
       </div>
 
       {/* 6. Explore Deeper Intelligence */}
-      <div className="py-32 bg-panel/20 border-t border-line/30">
+      <div className="py-16 bg-panel/20 border-t border-line/30">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="font-mono text-sm tracking-widest text-muted mb-12">EXPLORE DEEPER INTELLIGENCE</div>
           
@@ -308,7 +303,7 @@ export function IntelligenceDomains() {
       </div>
 
       {/* 7. Final Transition Scene */}
-      <div className="py-40 text-center flex flex-col items-center">
+      <div className="py-20 text-center flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}

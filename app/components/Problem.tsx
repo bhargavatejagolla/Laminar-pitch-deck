@@ -17,7 +17,7 @@ export function Problem() {
   const cameraNodes = Array.from({ length: 24 }).map((_, i) => i);
 
   return (
-    <section ref={containerRef} className="relative w-full bg-void text-text overflow-hidden py-32 border-t border-line/30" id="intelligence">
+    <section ref={containerRef} className="relative w-full bg-void text-text overflow-hidden py-16 border-t border-line/30" id="intelligence">
       
       {/* Dynamic Background Noise (Subtle) */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
@@ -27,11 +27,11 @@ export function Problem() {
       <motion.div style={{ opacity }} className="container mx-auto px-6 md:px-12 relative z-10">
         
         {/* Intro */}
-        <div className="max-w-4xl mx-auto text-center mb-32">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true,  }}
             className="font-mono text-xs text-signal/80 tracking-[0.2em] mb-8 flex items-center justify-center gap-3"
           >
             <Eye className="w-3 h-3" />
@@ -41,7 +41,7 @@ export function Problem() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true,  }}
             className="text-3xl md:text-5xl font-medium tracking-tight mb-4"
           >
             Cities are watching.
@@ -49,7 +49,7 @@ export function Problem() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true,  }}
             className="text-3xl md:text-5xl font-medium tracking-tight text-muted mb-8"
           >
             But watching isn't understanding.
@@ -58,7 +58,7 @@ export function Problem() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true,  }}
             className="text-lg text-muted/80 font-sans font-light leading-relaxed max-w-3xl mx-auto"
           >
             Existing CCTV networks generate enormous amounts of visual information. Human operators and fragmented systems must still identify, interpret, verify, and coordinate responses across constantly changing environments.
@@ -66,11 +66,11 @@ export function Problem() {
         </div>
 
         {/* 1. Camera Wall & Attention Bottleneck */}
-        <div className="mb-40 relative">
+        <div className="mb-20 relative">
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true,  }}
             className="text-center mb-16"
           >
             <h3 className="text-2xl md:text-3xl font-medium mb-4">More cameras ≠ more awareness.</h3>
@@ -85,7 +85,7 @@ export function Problem() {
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true,  }}
                 transition={{ duration: 0.5, delay: i * 0.03 }}
                 className="aspect-video glass-panel border border-line/50 rounded-md flex items-center justify-center overflow-hidden relative group"
               >
@@ -98,23 +98,40 @@ export function Problem() {
           
           {/* Bottleneck Convergence */}
           <div className="flex flex-col items-center mt-[-40px] relative z-20">
-            <div className="h-20 w-px bg-gradient-to-b from-line to-signal" />
-            <div className="border border-signal/30 bg-panel/80 backdrop-blur px-6 py-3 rounded-sm font-mono text-xs tracking-widest text-signal">
-              HUMAN ATTENTION
+            <div className="h-24 w-px bg-gradient-to-b from-line to-signal relative overflow-hidden">
+              <motion.div 
+                animate={{ y: [0, 96] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                className="absolute top-0 left-[-1px] w-[3px] h-8 bg-signal shadow-[0_0_8px_rgba(0,240,255,0.8)]"
+              />
             </div>
+            <div className="border border-signal/50 bg-void backdrop-blur-xl px-8 py-4 rounded-sm font-mono text-sm tracking-widest text-signal shadow-[0_0_20px_rgba(0,240,255,0.1)]">
+              THE HUMAN BOTTLENECK
+            </div>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true,  }}
+              className="mt-6 text-muted/80 text-sm max-w-md mx-auto text-center"
+            >
+              An operator can actively monitor only 4 out of 100 cameras. 96% of the city's visual data is effectively discarded until a forensic search is needed.
+            </motion.p>
           </div>
         </div>
 
         {/* 2. The Context Gap */}
-        <div className="mb-40">
+        <div className="mb-20">
           <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true,  }}
             className="text-center mb-16"
           >
-            <h3 className="text-2xl md:text-3xl font-medium mb-4">A single camera sees an event.</h3>
-            <h3 className="text-2xl md:text-3xl font-medium text-muted">Multiple cameras can reveal the situation.</h3>
+            <h3 className="text-3xl md:text-4xl font-medium mb-4">A single camera sees an isolated event.</h3>
+            <h3 className="text-3xl md:text-4xl font-medium text-muted mb-6">Connected intelligence reveals the situation.</h3>
+            <p className="text-muted/80 max-w-2xl mx-auto font-light text-lg">
+              By fusing spatial data across the camera network, LAMINAR understands trajectories, intent, and complex interactions that no single lens can capture.
+            </p>
           </motion.div>
 
           <div className="max-w-5xl mx-auto relative flex flex-col md:flex-row items-center justify-center gap-12 px-6">
@@ -160,11 +177,11 @@ export function Problem() {
         </div>
 
         {/* 3. Emerging Risk (Timeline) */}
-        <div className="mb-40">
+        <div className="mb-20">
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true,  }}
             className="text-center mb-16"
           >
             <h3 className="text-2xl md:text-3xl font-medium mb-4 max-w-2xl mx-auto leading-tight">
@@ -172,45 +189,68 @@ export function Problem() {
             </h3>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto relative py-12">
+          <div className="max-w-4xl mx-auto relative py-12 px-4 md:px-8">
             {/* Base Line */}
-            <div className="absolute top-1/2 left-0 w-full h-px bg-line -translate-y-1/2" />
-            <motion.div 
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-              viewport={{ once: true }}
-              className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-signal to-critical -translate-y-1/2 origin-left"
-            />
-
+            <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-cyan-500/20 via-amber-500/20 to-red-500/50" />
+            
             <div className="relative flex justify-between items-center z-10">
-              <div className="flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-void border-2 border-signal mb-4" />
-                <div className="font-mono text-[10px] tracking-widest text-muted mb-1">T - 30s</div>
-                <div className="font-sans text-xs text-muted/70">Small anomaly</div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-void border-2 border-warning mb-4" />
-                <div className="font-mono text-[10px] tracking-widest text-muted mb-1">T - 15s</div>
-                <div className="font-sans text-xs text-muted/70">Growing pattern</div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-4 h-4 rounded-full bg-critical shadow-[0_0_15px_rgba(239,68,68,0.5)] mb-4 animate-pulse" />
-                <div className="font-mono text-[10px] tracking-widest text-critical font-bold mb-1">NOW</div>
-                <div className="font-sans text-xs text-critical/80">Incident</div>
-              </div>
+              {/* T-30s */}
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center gap-4"
+              >
+                <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-[3px] border-cyan-500 bg-void shadow-[0_0_15px_rgba(6,182,212,0.3)]" />
+                <div className="text-center">
+                  <div className="font-mono text-xs md:text-sm text-muted mb-1 font-bold">T - 30s</div>
+                  <div className="text-xs md:text-sm text-muted/60 font-sans">Small anomaly</div>
+                </div>
+              </motion.div>
+
+              {/* T-15s */}
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-col items-center gap-4"
+              >
+                <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-[3px] border-amber-500 bg-void shadow-[0_0_15px_rgba(245,158,11,0.3)]" />
+                <div className="text-center">
+                  <div className="font-mono text-xs md:text-sm text-muted mb-1 font-bold">T - 15s</div>
+                  <div className="text-xs md:text-sm text-muted/60 font-sans">Growing pattern</div>
+                </div>
+              </motion.div>
+
+              {/* Incident */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-col items-center gap-4"
+              >
+                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-red-500 shadow-[0_0_30px_rgba(239,68,68,0.6)] flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white rounded-full animate-ping" />
+                </div>
+                <div className="text-center">
+                  <div className="font-mono text-sm md:text-base text-red-500 font-bold mb-1 tracking-widest">NOW</div>
+                  <div className="text-sm md:text-base text-red-500/80 font-sans font-medium">Incident</div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
 
         {/* 4. Chaos to Clarity Transition */}
-        <div className="py-32 flex flex-col items-center text-center relative">
+        <div className="py-16 flex flex-col items-center text-center relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true,  }}
             transition={{ duration: 1 }}
-            className="mb-24"
+            className="mb-12"
           >
             <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-4">
               The city doesn't need more eyes.
@@ -221,7 +261,7 @@ export function Problem() {
           </motion.div>
 
           {/* Convergence Node -> Leads into Phase 3 */}
-          <div className="h-32 w-px bg-gradient-to-b from-transparent to-signal relative overflow-hidden">
+          <div className="h-32 w-px bg-gradient-to-b from-transparent to-signal relative overflow-hidden mb-8">
             <motion.div 
               animate={{ y: [0, 128] }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -230,13 +270,20 @@ export function Problem() {
           </div>
           
           <motion.div
-            initial={{ scale: 0, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 font-mono text-xl md:text-2xl font-bold tracking-[0.3em] text-text drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+            viewport={{ once: true,  }}
+            transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
+            className="relative z-10 flex flex-col items-center"
           >
-            LAMINAR
+            <div className="absolute inset-0 bg-signal/20 blur-[50px] -m-12 rounded-full pointer-events-none" />
+            <div className="font-mono text-xs tracking-[0.3em] text-signal/80 mb-2">THE SOLUTION</div>
+            <div className="font-mono text-2xl md:text-4xl font-bold tracking-[0.2em] text-text drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+              LAMINAR
+            </div>
+            <div className="mt-4 text-muted/60 text-sm tracking-wide font-light max-w-md mx-auto text-center">
+              The connective tissue of urban intelligence.
+            </div>
           </motion.div>
 
         </div>

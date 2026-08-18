@@ -5,10 +5,10 @@ import { Network, Activity, Layers, ArrowDown } from "lucide-react";
 
 export function IntelligenceEngine() {
   return (
-    <section className="relative w-full bg-void text-text overflow-hidden py-32" id="technology">
+    <section className="relative w-full bg-void text-text overflow-hidden py-16" id="technology">
       
       {/* 1. The Opening - Connecting the Signals */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mb-20">
         <div className="flex flex-col items-center justify-center min-h-[50vh] relative">
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-32 w-full mb-16 relative px-4">
@@ -16,7 +16,7 @@ export function IntelligenceEngine() {
             <motion.div 
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true,  }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute top-1/2 left-[10%] right-[10%] h-px bg-signal hidden md:block origin-left"
             />
@@ -89,7 +89,7 @@ export function IntelligenceEngine() {
         {/* 01 OBSERVE */}
         <div className="relative pl-12 md:pl-24 py-16">
           <div className="absolute left-[-4px] md:left-[46px] top-24 w-2 h-2 bg-void border-2 border-signal rounded-full z-10" />
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true,  }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">01 / OBSERVE</div>
             <h3 className="text-3xl md:text-4xl font-medium mb-6">See what is happening.</h3>
             <p className="text-muted/80 font-sans font-light leading-relaxed mb-8 max-w-2xl">
@@ -106,7 +106,7 @@ export function IntelligenceEngine() {
         {/* 02 UNDERSTAND */}
         <div className="relative pl-12 md:pl-24 py-16">
           <div className="absolute left-[-4px] md:left-[46px] top-24 w-2 h-2 bg-void border-2 border-signal rounded-full z-10" />
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true,  }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">02 / UNDERSTAND</div>
             <h3 className="text-3xl md:text-4xl font-medium mb-6 max-w-xl">Seeing an object isn't understanding a situation.</h3>
             
@@ -131,7 +131,7 @@ export function IntelligenceEngine() {
         {/* 03 CORRELATE */}
         <div className="relative pl-12 md:pl-24 py-16">
           <div className="absolute left-[-4px] md:left-[46px] top-24 w-2 h-2 bg-void border-2 border-signal rounded-full z-10" />
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true,  }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">03 / CORRELATE</div>
             <h3 className="text-3xl md:text-4xl font-medium mb-6">One event. Multiple perspectives.</h3>
             
@@ -157,7 +157,7 @@ export function IntelligenceEngine() {
         {/* 04 PREDICT */}
         <div className="relative pl-12 md:pl-24 py-16">
           <div className="absolute left-[-4px] md:left-[46px] top-24 w-2 h-2 bg-void border-2 border-signal rounded-full z-10" />
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true,  }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">04 / PREDICT</div>
             <h3 className="text-3xl md:text-4xl font-medium mb-12 max-w-2xl">Don't only ask what happened. Ask what is changing.</h3>
             
@@ -188,7 +188,7 @@ export function IntelligenceEngine() {
         {/* 05 ORCHESTRATE */}
         <div className="relative pl-12 md:pl-24 py-16">
           <div className="absolute left-[-4px] md:left-[46px] top-24 w-2 h-2 bg-void border-2 border-signal rounded-full z-10" />
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true,  }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">05 / ORCHESTRATE</div>
             <h3 className="text-3xl md:text-4xl font-medium mb-8 max-w-2xl">Intelligence becomes useful when it can drive action.</h3>
             
@@ -210,7 +210,7 @@ export function IntelligenceEngine() {
         {/* 06 RESPOND */}
         <div className="relative pl-12 md:pl-24 py-16">
           <div className="absolute left-[-4px] md:left-[46px] top-24 w-2 h-2 bg-void border-2 border-signal rounded-full z-10" />
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true,  }}>
             <div className="font-mono text-xs text-signal tracking-[0.2em] mb-4">06 / RESPOND</div>
             <h3 className="text-3xl md:text-4xl font-medium mb-8 max-w-2xl">From intelligence to coordinated action.</h3>
             
@@ -234,7 +234,7 @@ export function IntelligenceEngine() {
       </div>
 
       {/* 3. The Architecture Reveal */}
-      <div className="py-40 text-center container mx-auto px-6">
+      <div className="py-20 text-center container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -270,13 +270,13 @@ export function IntelligenceEngine() {
       </div>
 
       {/* 4. Multi-modal Intelligence */}
-      <div className="py-32 bg-panel/30 border-y border-line/30">
+      <div className="py-16 bg-panel/30 border-y border-line/30">
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-24"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">
               The camera is the beginning—not the boundary.
@@ -322,7 +322,7 @@ export function IntelligenceEngine() {
       </div>
 
       {/* 5. The Transition */}
-      <div className="py-40 text-center flex flex-col items-center">
+      <div className="py-20 text-center flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -336,7 +336,7 @@ export function IntelligenceEngine() {
             It's the intelligence layer above the camera system.
           </h2>
 
-          <div className="mb-24 flex flex-col items-center">
+          <div className="mb-12 flex flex-col items-center">
             <h3 className="text-2xl md:text-4xl font-medium mb-4 text-signal">From pixels to context.</h3>
             <h3 className="text-2xl md:text-4xl font-medium mb-12">From context to action.</h3>
             

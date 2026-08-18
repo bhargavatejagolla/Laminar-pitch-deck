@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Activity } from "lucide-react";
 import { useEffect, useState } from "react";
 import WebThreads from "./WebThreads";
-import StrokeText from "./StrokeText";
 
 const pipelineStages = [
   "OBSERVE",
@@ -67,52 +66,40 @@ export function Hero() {
         </motion.div>
 
         {/* Main Headlines */}
-        <div className="max-w-4xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-muted mb-2"
-          >
-            THE CITY ALREADY HAS THE CAMERAS.
-          </motion.h1>
+        <div className="max-w-4xl relative">
+          {/* Subtle dark gradient behind text for readability over intense WebThreads */}
+          <div className="absolute inset-0 bg-void/40 blur-3xl -m-12 rounded-full pointer-events-none" />
           
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.8 }}
-            className="mb-8"
-          >
-            <StrokeText
-              text="LAMINAR GIVES THEM INTELLIGENCE."
-              strokeColor="#00F0FF"
-              fillColor="#F8FAFC"
-              strokeWidth={1.5}
-              drawDuration={2}
-              fillDelay={0.5}
-              stagger={0.08}
-              ease="power2.out"
-              trigger="mount"
-              fillMode="wipe"
-              fontSize={64}
-              fontWeight={800}
-              letterSpacing={-2}
-              className="drop-shadow-[0_0_15px_rgba(0,240,255,0.3)] hidden md:block"
-            />
-            {/* Fallback for mobile since the stroke text might be too big */}
-            <h1 className="text-4xl font-medium tracking-tight text-text drop-shadow-[0_0_15px_rgba(0,240,255,0.1)] md:hidden">
-              LAMINAR GIVES THEM INTELLIGENCE.
-            </h1>
-          </motion.div>
+          <div className="relative z-10">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.5 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-muted mb-2"
+            >
+              THE CITY ALREADY HAS THE CAMERAS.
+            </motion.h1>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 2.2 }}
+              className="mb-8 overflow-hidden"
+            >
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-white to-[#00F0FF] bg-[length:200%_auto] animate-gradient-x drop-shadow-[0_0_30px_rgba(0,240,255,0.4)] pb-2">
+                LAMINAR GIVES THEM INTELLIGENCE.
+              </h1>
+            </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 3.5 }}
-            className="text-lg md:text-xl text-muted font-sans font-light max-w-2xl leading-relaxed mb-12"
-          >
-            An AI-powered intelligence layer that transforms existing CCTV infrastructure into real-time, contextual, and predictive urban intelligence.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 3.0 }}
+              className="text-lg md:text-xl text-muted font-sans font-light max-w-2xl leading-relaxed mb-12"
+            >
+              An AI-powered intelligence layer that transforms existing CCTV infrastructure into real-time, contextual, and predictive urban intelligence.
+            </motion.p>
+          </div>
         </div>
 
         {/* CTAs */}
