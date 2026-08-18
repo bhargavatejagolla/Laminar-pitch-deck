@@ -11,49 +11,49 @@ export function IntelligenceEngine() {
       <div className="container mx-auto px-6 md:px-12 relative z-10 mb-40">
         <div className="flex flex-col items-center justify-center min-h-[50vh] relative">
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32 w-full mb-16 relative">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-32 w-full mb-16 relative px-4">
             {/* Connection Line */}
             <motion.div 
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="absolute top-1/2 left-[20%] right-[20%] h-px bg-signal hidden md:block origin-left"
+              className="absolute top-1/2 left-[10%] right-[10%] h-px bg-signal hidden md:block origin-left"
             />
             
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-panel border border-line p-4 rounded text-center z-10 min-w-[150px]"
+              className="glass-panel border border-line p-6 rounded-xl text-center z-10 w-full md:min-w-[150px] md:w-auto"
             >
-              <div className="w-2 h-2 bg-signal rounded-full mx-auto mb-2 animate-pulse" />
+              <div className="w-2 h-2 bg-signal rounded-full mx-auto mb-2 animate-pulse shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
               <div className="font-mono text-xs text-muted mb-1">CAM_047</div>
-              <div className="font-mono text-[10px]">VIDEO STREAM</div>
+              <div className="font-mono text-[10px] text-signal/70">VIDEO STREAM</div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="bg-panel border border-line p-4 rounded text-center z-10 min-w-[150px] hidden md:block"
+              transition={{ delay: 0.2 }}
+              className="glass-panel border border-line p-6 rounded-xl text-center z-10 w-full md:min-w-[150px] md:w-auto"
             >
-              <div className="w-2 h-2 bg-signal rounded-full mx-auto mb-2 animate-pulse" />
+              <div className="w-2 h-2 bg-signal rounded-full mx-auto mb-2 animate-pulse shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
               <div className="font-mono text-xs text-muted mb-1">CAM_082</div>
-              <div className="font-mono text-[10px]">VIDEO STREAM</div>
+              <div className="font-mono text-[10px] text-signal/70">VIDEO STREAM</div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 1 }}
-              className="bg-panel border border-line p-4 rounded text-center z-10 min-w-[150px]"
+              transition={{ delay: 0.4 }}
+              className="glass-panel border border-line p-6 rounded-xl text-center z-10 w-full md:min-w-[150px] md:w-auto"
             >
-              <div className="w-2 h-2 bg-signal rounded-full mx-auto mb-2 animate-pulse" />
+              <div className="w-2 h-2 bg-signal rounded-full mx-auto mb-2 animate-pulse shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
               <div className="font-mono text-xs text-muted mb-1">CAM_052</div>
-              <div className="font-mono text-[10px]">VIDEO STREAM</div>
+              <div className="font-mono text-[10px] text-signal/70">VIDEO STREAM</div>
             </motion.div>
           </div>
 
@@ -61,7 +61,7 @@ export function IntelligenceEngine() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 1.5 }}
+            transition={{ delay: 0.8 }}
             className="text-center max-w-4xl"
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8">

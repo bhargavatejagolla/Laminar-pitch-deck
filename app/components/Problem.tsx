@@ -78,19 +78,20 @@ export function Problem() {
           </motion.div>
 
           {/* Abstract Camera Grid */}
-          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4 max-w-5xl mx-auto opacity-50 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-void/50 to-void z-10" />
+          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-4 max-w-6xl mx-auto relative px-4">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-void/90 z-10 pointer-events-none" />
             {cameraNodes.map((i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: [0.2, 0.8, 0.4], scale: 1 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 2, delay: i * 0.05, repeat: Infinity, repeatType: "reverse" }}
-                className="aspect-video bg-panel border border-line rounded flex items-center justify-center overflow-hidden relative"
+                transition={{ duration: 0.5, delay: i * 0.03 }}
+                className="aspect-video glass-panel border border-line/50 rounded-md flex items-center justify-center overflow-hidden relative group"
               >
-                <div className="absolute top-1 right-1 w-1 h-1 bg-signal/50 rounded-full" />
-                <div className="text-[8px] font-mono text-muted/30">CAM_{String(i).padStart(3, '0')}</div>
+                <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-signal rounded-full shadow-[0_0_8px_rgba(0,240,255,0.8)] opacity-50 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4px_4px]" />
+                <div className="text-[8px] md:text-[10px] font-mono text-muted/50 group-hover:text-signal transition-colors relative z-10">CAM_{String(i).padStart(3, '0')}</div>
               </motion.div>
             ))}
           </div>
@@ -116,72 +117,45 @@ export function Problem() {
             <h3 className="text-2xl md:text-3xl font-medium text-muted">Multiple cameras can reveal the situation.</h3>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto relative h-[400px] flex items-center justify-center">
-            {/* Connecting Lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
-              <motion.path 
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: 0.5 }}
-                d="M 100,100 L 450,200" stroke="var(--color-signal)" strokeWidth="1" fill="none" strokeDasharray="4 4" 
-              />
-              <motion.path 
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: 0.7 }}
-                d="M 100,300 L 450,200" stroke="var(--color-signal)" strokeWidth="1" fill="none" strokeDasharray="4 4" 
-              />
-              <motion.path 
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: 0.9 }}
-                d="M 800,100 L 450,200" stroke="var(--color-signal)" strokeWidth="1" fill="none" strokeDasharray="4 4" 
-              />
-              <motion.path 
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: 1.1 }}
-                d="M 800,300 L 450,200" stroke="var(--color-signal)" strokeWidth="1" fill="none" strokeDasharray="4 4" 
-              />
-            </svg>
-
-            {/* Nodes */}
-            <div className="absolute top-[80px] left-[50px] md:left-[100px]">
-              <div className="bg-panel border border-line px-4 py-2 rounded-sm font-mono text-[10px] md:text-xs">
-                <span className="text-muted block mb-1">CAM 014</span>
-                PERSON RUNNING
-              </div>
-            </div>
-            <div className="absolute bottom-[80px] left-[50px] md:left-[100px]">
-              <div className="bg-panel border border-line px-4 py-2 rounded-sm font-mono text-[10px] md:text-xs">
-                <span className="text-muted block mb-1">CAM 027</span>
-                VEHICLE STOPPED
-              </div>
-            </div>
-            <div className="absolute top-[80px] right-[50px] md:right-[100px]">
-              <div className="bg-panel border border-line px-4 py-2 rounded-sm font-mono text-[10px] md:text-xs">
-                <span className="text-muted block mb-1">CAM 031</span>
-                CROWD FORMING
-              </div>
-            </div>
-            <div className="absolute bottom-[80px] right-[50px] md:right-[100px]">
-              <div className="bg-panel border border-line px-4 py-2 rounded-sm font-mono text-[10px] md:text-xs">
-                <span className="text-muted block mb-1">CAM 042</span>
-                ROAD BLOCKED
-              </div>
+          <div className="max-w-5xl mx-auto relative flex flex-col md:flex-row items-center justify-center gap-12 px-6">
+            
+            <div className="flex flex-col gap-6 w-full md:w-1/3">
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass-panel p-4 rounded-xl relative">
+                <div className="absolute right-[-24px] top-1/2 w-6 h-px bg-signal hidden md:block" />
+                <span className="text-muted text-xs block mb-1">CAM 014</span>
+                <span className="font-mono text-sm font-bold text-text">PERSON RUNNING</span>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, delay: 0.1 }} className="glass-panel p-4 rounded-xl relative">
+                <div className="absolute right-[-24px] top-1/2 w-6 h-px bg-signal hidden md:block" />
+                <span className="text-muted text-xs block mb-1">CAM 027</span>
+                <span className="font-mono text-sm font-bold text-text">VEHICLE STOPPED</span>
+              </motion.div>
             </div>
 
-            {/* Center Context */}
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="z-10 bg-void border border-signal/50 p-6 rounded-full shadow-[0_0_30px_rgba(0,240,255,0.15)] flex flex-col items-center justify-center"
+              className="z-10 shining-border bg-void p-8 rounded-full shadow-[0_0_40px_rgba(0,240,255,0.2)] flex flex-col items-center justify-center relative mx-4 min-w-[160px] min-h-[160px]"
             >
-              <GitMerge className="w-6 h-6 text-signal mb-2" />
-              <span className="font-mono text-xs tracking-widest font-bold text-signal">CONTEXT</span>
+              <GitMerge className="w-8 h-8 text-signal mb-3" />
+              <span className="font-mono text-sm tracking-widest font-bold text-signal">CONTEXT</span>
             </motion.div>
+
+            <div className="flex flex-col gap-6 w-full md:w-1/3">
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, delay: 0.2 }} className="glass-panel p-4 rounded-xl relative text-right md:text-left">
+                <div className="absolute left-[-24px] top-1/2 w-6 h-px bg-signal hidden md:block" />
+                <span className="text-muted text-xs block mb-1">CAM 031</span>
+                <span className="font-mono text-sm font-bold text-text">CROWD FORMING</span>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, delay: 0.3 }} className="glass-panel p-4 rounded-xl relative text-right md:text-left">
+                <div className="absolute left-[-24px] top-1/2 w-6 h-px bg-signal hidden md:block" />
+                <span className="text-muted text-xs block mb-1">CAM 042</span>
+                <span className="font-mono text-sm font-bold text-text">ROAD BLOCKED</span>
+              </motion.div>
+            </div>
+
           </div>
         </div>
 

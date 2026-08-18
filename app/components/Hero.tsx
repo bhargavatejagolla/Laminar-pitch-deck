@@ -31,18 +31,18 @@ export function Hero() {
         <WebThreads 
           color1="#00F0FF"
           color2="#3b82f6"
-          color3="#20262E"
-          speed={0.15}
-          threadCount={8}
-          frequency={3}
-          spread={0.2}
+          color3="#F8FAFC"
+          speed={0.2}
+          threadCount={6}
+          frequency={4}
+          spread={0.25}
           taper={1.2}
           position={0.5}
           fanMode="center"
-          glow={0.03}
-          falloff={0.6}
-          thickness={1.1}
-          brightness={0.8}
+          glow={0.05}
+          falloff={0.4}
+          thickness={1.5}
+          brightness={1.2}
           opacity={1}
           mirror={true}
           shimmer={true}
