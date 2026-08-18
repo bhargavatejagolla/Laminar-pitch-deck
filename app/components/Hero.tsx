@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Activity } from "lucide-react";
 import { useEffect, useState } from "react";
+import WebThreads from "./WebThreads";
 
 const pipelineStages = [
   "OBSERVE",
@@ -24,28 +25,32 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-between pt-32 pb-8 overflow-hidden">
-      {/* Background Grid & Particles */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface/20 via-void to-void" />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z\' fill=\'%2320262E\' fill-opacity=\'0.4\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")',
-            backgroundSize: "40px 40px",
-          }}
+      {/* Background WebThreads */}
+      <div className="absolute inset-0 z-0 pointer-events-auto">
+        <WebThreads 
+          color1="#00F0FF"
+          color2="#3b82f6"
+          color3="#20262E"
+          speed={0.15}
+          threadCount={8}
+          frequency={3}
+          spread={0.2}
+          taper={1.2}
+          position={0.5}
+          fanMode="center"
+          glow={0.03}
+          falloff={0.6}
+          thickness={1.1}
+          brightness={0.8}
+          opacity={1}
+          mirror={true}
+          shimmer={true}
+          grain={true}
+          grainIntensity={0.03}
+          mouseInteraction={true}
+          mouseStrength={0.2}
         />
-        
-        {/* Subtle camera node visual */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-line/20 rounded-full flex items-center justify-center opacity-30">
-          <div className="w-1 h-1 bg-signal rounded-full animate-ping" />
-        </div>
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 border border-line/20 rounded-full flex items-center justify-center opacity-20">
-          <div className="w-2 h-2 bg-signal rounded-full animate-pulse" />
-        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_var(--color-void)_100%)] pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col flex-grow justify-center">
