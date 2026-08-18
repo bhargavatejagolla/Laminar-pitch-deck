@@ -125,7 +125,7 @@ export function Problem() {
                 <span className="text-muted text-xs block mb-1">CAM 014</span>
                 <span className="font-mono text-sm font-bold text-text">PERSON RUNNING</span>
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, delay: 0.1 }} className="glass-panel p-4 rounded-xl relative">
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="glass-panel p-4 rounded-xl relative">
                 <div className="absolute right-[-24px] top-1/2 w-6 h-px bg-signal hidden md:block" />
                 <span className="text-muted text-xs block mb-1">CAM 027</span>
                 <span className="font-mono text-sm font-bold text-text">VEHICLE STOPPED</span>
@@ -144,12 +144,12 @@ export function Problem() {
             </motion.div>
 
             <div className="flex flex-col gap-6 w-full md:w-1/3">
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, delay: 0.2 }} className="glass-panel p-4 rounded-xl relative text-right md:text-left">
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="glass-panel p-4 rounded-xl relative text-right md:text-left">
                 <div className="absolute left-[-24px] top-1/2 w-6 h-px bg-signal hidden md:block" />
                 <span className="text-muted text-xs block mb-1">CAM 031</span>
                 <span className="font-mono text-sm font-bold text-text">CROWD FORMING</span>
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, delay: 0.3 }} className="glass-panel p-4 rounded-xl relative text-right md:text-left">
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="glass-panel p-4 rounded-xl relative text-right md:text-left">
                 <div className="absolute left-[-24px] top-1/2 w-6 h-px bg-signal hidden md:block" />
                 <span className="text-muted text-xs block mb-1">CAM 042</span>
                 <span className="font-mono text-sm font-bold text-text">ROAD BLOCKED</span>
