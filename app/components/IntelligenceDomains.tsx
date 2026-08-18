@@ -156,19 +156,19 @@ export function IntelligenceDomains() {
             <div className="bg-void border border-signal px-8 py-3 rounded-md text-signal font-bold tracking-widest mb-8 shadow-[0_0_20px_rgba(0,240,255,0.15)] text-lg">LAMINAR CORE</div>
             <div className="w-px h-12 bg-line" />
             
-            <div className="w-full max-w-2xl border-t border-line relative pt-8 flex justify-between px-8 md:px-16">
+            <div className="w-full max-w-2xl border-t border-line relative pt-8 flex justify-between px-2 md:px-16">
               <div className="absolute top-0 left-1/2 w-px h-12 bg-line -translate-x-1/2" />
               <div className="flex flex-col items-center">
                 <ArrowDown className="w-4 h-4 text-line mb-3" />
-                <div className="bg-panel border border-line px-6 py-3 rounded-md shadow-lg font-bold">VISION</div>
+                <div className="bg-panel border border-line px-3 py-2 md:px-6 md:py-3 rounded-md shadow-lg font-bold text-[10px] md:text-base">VISION</div>
               </div>
               <div className="flex flex-col items-center">
                 <ArrowDown className="w-4 h-4 text-line mb-3" />
-                <div className="bg-panel border border-line px-6 py-3 rounded-md shadow-lg font-bold">SPATIAL</div>
+                <div className="bg-panel border border-line px-3 py-2 md:px-6 md:py-3 rounded-md shadow-lg font-bold text-[10px] md:text-base">SPATIAL</div>
               </div>
               <div className="flex flex-col items-center">
                 <ArrowDown className="w-4 h-4 text-line mb-3" />
-                <div className="bg-panel border border-line px-6 py-3 rounded-md shadow-lg font-bold">TEMPORAL</div>
+                <div className="bg-panel border border-line px-3 py-2 md:px-6 md:py-3 rounded-md shadow-lg font-bold text-[10px] md:text-base">TEMPORAL</div>
               </div>
             </div>
 

@@ -52,13 +52,13 @@ export function Phase6_Business() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="absolute w-[350px] h-[350px] md:w-[700px] md:h-[700px] rounded-full border border-line/30 border-dashed animate-[spin_60s_linear_infinite]"
+              className="absolute w-[300px] h-[300px] md:w-[700px] md:h-[700px] rounded-full border border-line/30 border-dashed animate-[spin_60s_linear_infinite]"
             />
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1 }}
-              className="absolute top-10 md:top-16 left-1/2 -translate-x-1/2 font-mono text-xs md:text-sm text-muted/60 tracking-widest bg-void px-4 py-1 rounded-full border border-line/30 z-20"
+              className="absolute top-10 md:top-16 left-1/2 -translate-x-1/2 font-mono text-[10px] md:text-sm text-muted/60 tracking-widest bg-void px-4 py-1 rounded-full border border-line/30 z-20 whitespace-nowrap"
             >
               GLOBAL SMART CITY INFRASTRUCTURE
             </motion.div>
@@ -69,13 +69,13 @@ export function Phase6_Business() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-              className="absolute w-[250px] h-[250px] md:w-[500px] md:h-[500px] rounded-full border border-signal/30 animate-[spin_40s_linear_infinite_reverse]"
+              className="absolute w-[200px] h-[200px] md:w-[500px] md:h-[500px] rounded-full border border-signal/30 animate-[spin_40s_linear_infinite_reverse]"
             />
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1.3 }}
-              className="absolute top-28 md:top-48 left-1/2 -translate-x-1/2 font-mono text-sm md:text-base text-signal/80 tracking-widest bg-void px-4 py-1 rounded-full border border-signal/20 z-20"
+              className="absolute top-28 md:top-48 left-1/2 -translate-x-1/2 font-mono text-xs md:text-base text-signal/80 tracking-widest bg-void px-4 py-1 rounded-full border border-signal/20 z-20 whitespace-nowrap"
             >
               TRANSIT HUBS & AIRPORTS
             </motion.div>
@@ -86,17 +86,17 @@ export function Phase6_Business() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
-              className="absolute w-[150px] h-[150px] md:w-[300px] md:h-[300px] rounded-full border-2 border-signal shadow-[0_0_50px_rgba(0,240,255,0.15)] flex items-center justify-center bg-signal/5 backdrop-blur-sm"
+              className="absolute w-[120px] h-[120px] md:w-[300px] md:h-[300px] rounded-full border-2 border-signal shadow-[0_0_50px_rgba(0,240,255,0.15)] flex items-center justify-center bg-signal/5 backdrop-blur-sm"
             >
-              <Globe2 className="w-16 h-16 md:w-24 md:h-24 text-signal animate-pulse drop-shadow-[0_0_15px_rgba(0,240,255,0.5)]" />
+              <Globe2 className="w-12 h-12 md:w-24 md:h-24 text-signal animate-pulse drop-shadow-[0_0_15px_rgba(0,240,255,0.5)]" />
             </motion.div>
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1.6 }}
-              className="absolute mt-48 md:mt-72 font-mono text-base md:text-lg text-text font-bold tracking-[0.2em] bg-void px-6 py-2 rounded-full border border-signal shadow-[0_0_20px_rgba(0,240,255,0.1)] z-20"
+              className="absolute mt-48 md:mt-72 font-mono text-[10px] md:text-lg text-text font-bold tracking-[0.2em] bg-void px-4 md:px-6 py-2 rounded-full border border-signal shadow-[0_0_20px_rgba(0,240,255,0.1)] z-20 text-center"
             >
-              LARGE CAMPUSES & ENTERPRISE
+              LARGE CAMPUSES<br className="md:hidden"/> & ENTERPRISE
             </motion.div>
 
           </div>
